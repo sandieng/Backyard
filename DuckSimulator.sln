@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckSimulator", "DuckSimulator\DuckSimulator.csproj", "{E5BF794C-E793-45ED-AA26-028A7221E031}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckORama", "DuckORama\DuckORama.csproj", "{4F58E33B-6307-459D-B7F6-9285BD4A69D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5BF794C-E793-45ED-AA26-028A7221E031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BF794C-E793-45ED-AA26-028A7221E031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BF794C-E793-45ED-AA26-028A7221E031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BF794C-E793-45ED-AA26-028A7221E031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F58E33B-6307-459D-B7F6-9285BD4A69D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F58E33B-6307-459D-B7F6-9285BD4A69D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F58E33B-6307-459D-B7F6-9285BD4A69D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F58E33B-6307-459D-B7F6-9285BD4A69D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76F9BE48-477F-46DA-9D53-C9DC39A1483A}
+	EndGlobalSection
+EndGlobal
