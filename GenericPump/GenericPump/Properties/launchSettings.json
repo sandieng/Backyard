@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "GenericPump": {
+      "commandName": "Project",
+      "commandLineArgs": "Rapid"
+    }
+  }
+}
