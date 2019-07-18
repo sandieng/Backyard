@@ -1,6 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using PumpFactory;
+﻿using PumpFactory;
+using System;
 
 namespace GenericPump
 {
