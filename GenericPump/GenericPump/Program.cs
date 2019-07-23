@@ -1,5 +1,5 @@
-﻿using PumpFactory;
-using System;
+﻿using System;
+using System.Diagnostics;
 
 namespace GenericPump
 {
@@ -7,35 +7,31 @@ namespace GenericPump
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Let's pump up the world!");
+            Console.WriteLine("A pump event has been triggered ...");
 
+            CreateEventSource();
             CreatePump(args);
 
             Console.ReadKey();
         }
 
+        private static void CreateEventSource()
+        {
+            string source = "GenericPump";
+            string log = "Application";
+            if (!EventLog.SourceExists(source))
+            {
+                EventLog.CreateEventSource(source, log);
+            }
+        }
+
         private static void CreatePump(string[] args)
         {
-            switch (args[0])
-            {
-                case "Rapid":
-                    // Check on the database and ensure the last Rapid pump has completed
-                    // Exit if existing Rapid pump is running
-
-                    // Update Rapid pump entry in the database to indicate a new batch is going to run
-                    
-                    // Start a new Rapid pump
-                    var rapidPump = new Pump("Rapid", "http://getrapid.com.au/data");
-                    rapidPump.Start();
-                    break;
-
-                case "Coda":
-                    var codaPump = new Pump("Coda", "http://getcoda.com.au/data");
-                    codaPump.Start();
-                    break;
-                default:
-                    break;
-            }
+            var pumpName = args[0].ToLower();
+            var targetUrl = args[1].ToLower();
+            PumpFactory.PumpFactory factory = new PumpFactory.PumpFactory(pumpName, targetUrl);
+            var specificPump = factory.GetPump();
+            specificPump?.Start();
         }
     }
 }

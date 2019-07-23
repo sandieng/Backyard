@@ -2,7 +2,7 @@
 
 namespace PumpFactory
 {
-    public interface IPump
+    internal interface IPump
     {
         void Start();
     }

@@ -1,32 +1,19 @@
-﻿using System;
-
-namespace PumpFactory
+﻿namespace PumpFactory
 {
-    public class Pump : Base, IPump
+    public abstract class Pump 
     {
-        public Pump(string pumpName, string remoteUrl) : base(pumpName, remoteUrl)
+        private readonly string _pumpName;
+        private readonly string _remoteUrl;
+
+        public string PumpName => _pumpName;
+        public string RemoteUrl => _remoteUrl;
+
+        protected Pump(string pumpName, string remoteUrl)
         {
+            _pumpName = pumpName;
+            _remoteUrl = remoteUrl;
         }
 
-        public void Start()
-        {
-            var name = System.Reflection.Assembly.GetExecutingAssembly().FullName;
-
-            Console.WriteLine($"{PumpName} Pump started");
-            // TODO: Do what you need to do here
-            // Maybe call some fetching method
-            // Then maybe call some update method
-            // Then update the database that the pump has ended
-        }
-
-        private void Fetch()
-        {
-            Console.WriteLine("Fetching data");
-        }
-
-        private void Update()
-        {
-            Console.WriteLine("Updating data");
-        }
+        public abstract void Start();
     }
 }

@@ -2,7 +2,7 @@
   "profiles": {
     "GenericPump": {
       "commandName": "Project",
-      "commandLineArgs": "Rapid"
+      "commandLineArgs": "Rapid https://getrapid.com.au/data"
     }
   }
 }
