@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace PumpFactory
 {
     public class RapidPump : Pump, IPumpOperation
     {
-        public RapidPump(string pumpName, string remoteUrl) : base(pumpName, remoteUrl)
+        public RapidPump(string pumpName, string remoteUrl, string eventSource) : base(pumpName, remoteUrl, eventSource)
         {
-            Console.WriteLine($"{PumpName} Pump started, fetching data from {RemoteUrl}");
         }
-
 
         public override void Start()
         {
@@ -21,12 +20,14 @@ namespace PumpFactory
 
         public void Fetch()
         {
-            Console.WriteLine($"Fetching data for {PumpName}.");
+            EventLog.WriteEntry(EventSource, $"{PumpName} pump - fetching data ...");
+            Console.WriteLine($"Fetching data for {PumpName} pump.");
         }
 
         public void Update()
         {
-            Console.WriteLine($"Updating data for {PumpName}");
+            EventLog.WriteEntry(EventSource, $"{PumpName} pump - updating data ...");
+            Console.WriteLine($"Updating data for {PumpName} pump");
         }
     }
 }

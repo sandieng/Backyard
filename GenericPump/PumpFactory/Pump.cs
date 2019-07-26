@@ -1,17 +1,23 @@
-﻿namespace PumpFactory
+﻿using System;
+using System.Diagnostics;
+
+namespace PumpFactory
 {
     public abstract class Pump 
     {
-        private readonly string _pumpName;
-        private readonly string _remoteUrl;
+        public string PumpName { get; }
 
-        public string PumpName => _pumpName;
-        public string RemoteUrl => _remoteUrl;
+        public string RemoteUrl { get; }
 
-        protected Pump(string pumpName, string remoteUrl)
+        public string EventSource { get; }
+        protected Pump(string pumpName, string remoteUrl, string eventSource)
         {
-            _pumpName = pumpName;
-            _remoteUrl = remoteUrl;
+            PumpName = pumpName;
+            RemoteUrl = remoteUrl;
+            EventSource = eventSource;
+
+            EventLog.WriteEntry(EventSource, $"{PumpName} - started!");
+            Console.WriteLine($"{PumpName} Pump started, fetching data from {RemoteUrl}");
         }
 
         public abstract void Start();

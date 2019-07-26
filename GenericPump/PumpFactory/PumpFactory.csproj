@@ -9,4 +9,10 @@
     <Compile Remove="IPump.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.EventLog">
+      <HintPath>C:\Users\SEng\.nuget\packages\system.diagnostics.eventlog\4.5.0\ref\netstandard2.0\System.Diagnostics.EventLog.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
